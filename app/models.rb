@@ -1,5 +1,4 @@
 require 'sequel'
-require 'redis'
 require 'logger'
   
 $console = Logger.new STDOUT
@@ -12,3 +11,4 @@ DB.extension(:pagination)
 Sequel::Model.plugin :timestamps
 Sequel::Model.plugin :json_serializer
 
+require 'models/page'

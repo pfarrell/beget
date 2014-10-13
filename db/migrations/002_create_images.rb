@@ -1,10 +1,11 @@
 Sequel.migration do
   change do
-    create_table(:pages) do
+    create_table(:images) do
       primary_key :id
-      String :url
+      Integer :page_id
+      String :file_name
       String :title
-      Integer :image_id
+      String :caption
       DateTime :created_at
       DateTime :updated_at
     end
