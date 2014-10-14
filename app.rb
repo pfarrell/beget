@@ -6,6 +6,8 @@ require 'sinatra/respond_to'
 require 'sinatra/cookies'
 require 'securerandom'
 require 'haml'
+require 'logger'
+require 'sequel'
 
 class App < Sinatra::Application
   helpers Sinatra::UrlForHelper
@@ -15,6 +17,17 @@ class App < Sinatra::Application
   enable :sessions
   set :session_secret, ENV["BEGET_SESSION_SECRET"] || "youshouldreallychangethis"
   set :views, Proc.new { File.join(root, "app/views") }
+
+  $console = Logger.new STDOUT
+  database_url = ENV["BEGET_DATABASE_URL"] || 'postgres://localhost/quakes'
+  DB = Sequel.connect(
+    database_url,
+    logger: $console)
+  DB.sql_log_level = :debug
+  DB.extension(:pagination)
+  Sequel::Model.plugin :timestamps
+  Sequel::Model.plugin :json_serializer
+
 
   before do
     response.set_cookie(:appc, value: SecureRandom.uuid, expires: Time.now + 3600 * 24 * 365 * 10) if request.cookies["bmc"].nil?
