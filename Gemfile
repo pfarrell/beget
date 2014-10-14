@@ -8,15 +8,17 @@ gem 'emk-sinatra-url-for'
 gem 'sinatra-respond_to'
 
 gem 'sequel'
-gem 'mysql2'
 
 gem 'haml'
 
 gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 
+group :production do
+  gem 'mysql2'
+end
 
-group :development do
+group :development, :test do
   gem 'rspec'
   gem 'simplecov'
   gem 'byebug'
