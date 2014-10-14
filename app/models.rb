@@ -2,8 +2,9 @@ require 'sequel'
 require 'logger'
   
 $console = Logger.new STDOUT
+database_url = ENV["DATABASE_URL"] || 'postgres://localhost/quakes')
 DB = Sequel.connect(
-  "mysql2://#{ENV["BEMUSED_DB_USER"]}:#{ENV["BEMUSED_DB_PASS"]}@#{ENV["BEMUSED_DB_HOST"]}/#{ENV["BEMUSED_DB_NAME"]}",
+  database_url,
   logger: $console)
 DB.sql_log_level = :debug
 DB.extension(:pagination)

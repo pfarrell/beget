@@ -21,4 +21,5 @@ group :development do
   gem 'simplecov'
   gem 'byebug'
   gem 'shotgun'
+  gem 'sqlite3'
 end
