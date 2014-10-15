@@ -85,6 +85,7 @@ DEPENDENCIES
   emk-sinatra-url-for
   haml
   mysql2
+  rack-test
   rake
   rspec
   sequel

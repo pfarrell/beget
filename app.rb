@@ -1,21 +1,13 @@
 $: << File.expand_path('../app', __FILE__)
 
-#require 'sinatra'
-#require 'sinatra/url_for'
-#require 'sinatra/respond_to'
-#require 'sinatra/cookies'
-#require 'securerandom'
-#require 'haml'
-#require 'logger'
-#require 'sequel'
-
-ENV['RACK_ENV'] ||= 'development'
- 
+require 'logger'
+require 'bundler'
+Bundler.require :default, ENV['RACK_ENV'].to_sym
 
 class App < Sinatra::Application
-#  helpers Sinatra::UrlForHelper
-#  helpers Sinatra::Cookies
-#  register Sinatra::RespondTo
+  helpers Sinatra::UrlForHelper
+  helpers Sinatra::Cookies
+  register Sinatra::RespondTo
 
   enable :sessions
   set :session_secret, ENV["BEGET_SESSION_SECRET"] || "youshouldreallychangethis"
