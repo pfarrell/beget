@@ -1,13 +1,8 @@
 $: << File.expand_path('../app', __FILE__)
 
-require 'sinatra'
-require 'sinatra/url_for'
-require 'sinatra/respond_to'
-require 'sinatra/cookies'
-require 'securerandom'
-require 'haml'
 require 'logger'
-require 'sequel'
+require 'bundler'
+Bundler.require :default, ENV['RACK_ENV'].to_sym
 
 class App < Sinatra::Application
   helpers Sinatra::UrlForHelper
