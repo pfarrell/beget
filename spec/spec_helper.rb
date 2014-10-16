@@ -1,13 +1,9 @@
-require 'simplecov'
-require 'test/unit'
-require 'rack/test'
-require 'logger'
-
-require 'rubygems'
-require 'bundler'
+require 'bundler/setup'
 
 ENV['RACK_ENV'] = 'test'
-Bundler.require ENV['RACK_ENV'].to_sym
+
+Bundler.require :test
+
 
 SimpleCov.start do
   add_filter "/vendor/"
@@ -18,6 +14,7 @@ module RSpecMixin
   include Rack::Test::Methods
   def app() App end
 end
+
 
 #  $console = Logger.new STDOUT
 #  database_url = "sqlite::memory:"

@@ -1,8 +1,7 @@
 $: << File.expand_path('../app', __FILE__)
 
-require 'logger'
-require 'bundler'
 Bundler.require :default, ENV['RACK_ENV'].to_sym
+require 'logger'
 
 class App < Sinatra::Application
   helpers Sinatra::UrlForHelper
