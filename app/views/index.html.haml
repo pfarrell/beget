@@ -1,13 +1,9 @@
 %h1
-  =msg
+  PhotoGumbo
   %small
-    Welcome to the TerrorDome
+    a patf joint
 .hr
-  %form{role: "form", }
-    .form-group
-      %label{for: "name"}
-        New Page
-      %input.form-control{type: "text", name:"name", placeholder:"Enter your name"}
-    %button.btn.btn-default{type:"submit"}
-      Submit
+  %form{method: "GET", action: "#{url_for("/page/new")}", name: "new_page"}
+    %input.btn.btn-small{type: "submit"}
+      New Event
 :javascript
