@@ -1,0 +1,6 @@
+%form{method:"POST",action:"#{url_for("/page/new")}"}
+  .input
+    %input{type:"text",name:"page_name",value:"#{page.name}"}
+  .input
+    %input.btn.btn-default{type:"submit",value:"Create"}
+
