@@ -6,5 +6,4 @@ describe 'App' do
     expect(last_response).to be_ok
     expect(last_response.body).to match(/PhotoGumbo/)
   end
-
 end
