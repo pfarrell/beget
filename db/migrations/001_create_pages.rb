@@ -4,7 +4,7 @@ Sequel.migration do
       primary_key :id
       String :url
       String :title
-      Integer :image_id
+      Integer :main_image_id
       DateTime :created_at
       DateTime :updated_at
     end
