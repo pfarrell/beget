@@ -1,0 +1,11 @@
+%h1
+  =page.title
+%hr
+%form{method:"POST",action:"#{url_for("/upload")}",role:"form", enctype:"multipart/form-data"}
+  %input{type:"hidden",name:"page_id",value:"#{page.id}"}
+  .form-group
+    %label{for:"page_name"}
+      Add Photos
+    %input.form-control{type:"file",name:"images[]",multiple:"true"}
+    %input.btn.btn-default.btn-lg{type:"submit", value:"upload"}
+
