@@ -1,6 +1,9 @@
 %h1
   =page.title
 %hr
+-images.each do |image|
+  %img.item{src: "#{url_for("/gumbo/#{page.id}/#{image.file_name}")}"}
+%hr
 %form{method:"POST",action:"#{url_for("/upload")}",role:"form", enctype:"multipart/form-data"}
   %input{type:"hidden",name:"page_id",value:"#{page.id}"}
   .form-group
@@ -8,4 +11,14 @@
       Add Photos
     %input.form-control{type:"file",name:"images[]",multiple:"true"}
     %input.btn.btn-default.btn-lg{type:"submit", value:"upload"}
+:javascript
+  var container = document.querySelector('.container');
+  var msnry = new Masonry( container, {
+    // options
+    columnWidth: 200,
+    itemSelector: '.item'
+  });
+  imagesLoaded(container, function() {
+    msnry.layout();
+  });
 

@@ -12,6 +12,7 @@ class App < Sinatra::Application
   end
 
   get "/page/:id" do
-    haml :gumbo, locals: {page: Page[params[:id]]}
+    page = Page[params[:id]]
+    haml :gumbo, locals: {page: page, images: page.images}
   end
 end
