@@ -1,3 +1,2 @@
-class Page
-  attr_accessor :name
+class Page < Sequel::Model
 end

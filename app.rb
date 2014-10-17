@@ -13,7 +13,7 @@ class App < Sinatra::Application
   set :views, Proc.new { File.join(root, "app/views") }
 
   $console = Logger.new STDOUT
-  database_url = ENV["BEGET_DATABASE_URL"] || 'postgres://localhost/quakes'
+  database_url = ENV["BEGET_DATABASE_URL"] || 'sqlite://photogumbo.db'
   DB = Sequel.connect(
     database_url,
     logger: $console)

@@ -1,6 +1,8 @@
-%form{method:"POST",action:"#{url_for("/page/new")}"}
-  .input
-    %input{type:"text",name:"page_name",value:"#{page.name}"}
+%form{method:"POST",action:"#{url_for("/page/new")}",role:"form"}
+  .form-group
+    %label{for:"page_name"}
+      Page Name
+    %input.form-control{type:"text",id:"page_name",name:"page_name",value:"#{page.title}"}
   .input
     %input.btn.btn-default{type:"submit",value:"Create"}
 
