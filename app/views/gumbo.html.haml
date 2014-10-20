@@ -5,7 +5,8 @@
   %hr
 .masonry
   -images.each do |image|
-    %img.item{src: "#{url_for("/gumbo/#{page.id}/#{image.file_name}")}"}
+    %a{href: "#{url_for("/gumbo/#{page.id}/#{image.file_name}")}", data: {lightbox: "#{image.id}"}}
+      %img.item{src: "#{url_for("/gumbo/#{page.id}/#{image.file_name}")}"}
 .break
   %hr
 .upload

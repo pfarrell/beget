@@ -2,10 +2,10 @@
   "name": "PhotoGumbo",
   "version": "0.0.1",
   "dependencies": {
-    "imagesloaded": "~3.1.8",
-    "masonry": "~3.1.5"
+    "bootstrap": "~3.2.0",
+    "lightbox2": "~2.7.1"
   },
-  "homepage": "https://github.com/pfarrell/sinatra-shell",
+  "homepage": "https://github.com/pfarrell/photogumbo",
   "authors": [
     "Patrick Farrell <mr.patfarrell@gmail.com>"
   ],
