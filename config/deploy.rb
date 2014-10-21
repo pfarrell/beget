@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'app'
+set :application, 'photogumbo'
 set :repo_url, 'git@github.com:pfarrell/photogumbo.git'
 
 # Default branch is :master
