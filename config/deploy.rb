@@ -2,13 +2,13 @@
 lock '3.2.1'
 
 set :application, 'app'
-set :repo_url, 'git@github.com:pfarrell/sinatra-shell.git'
+set :repo_url, 'git@github.com:pfarrell/photogumbo.git'
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
- set :deploy_to, '/var/www/app'
+ set :deploy_to, '/var/www/photogumbo'
 
 # Default value for :scm is :git
 set :scm, :git
