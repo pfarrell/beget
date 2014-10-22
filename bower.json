@@ -2,8 +2,10 @@
   "name": "PhotoGumbo",
   "version": "0.0.1",
   "dependencies": {
-    "masonry": "~3.1.5",
-    "imagesloaded": "~3.1.8"
+    "bootstrap": "~3.2.0",
+    "lightbox2": "~2.7.1",
+    "imagesloaded": "~3.1.8",
+    "masonry": "~3.1.5"
   },
   "homepage": "https://github.com/pfarrell/photogumbo",
   "authors": [
