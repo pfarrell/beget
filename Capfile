@@ -2,9 +2,9 @@
 require 'capistrano/setup'
 
 # Includes default deployment tasks
+require 'capistrano/deploy'
 require 'capistrano/bundler'
 require 'capistrano/bower'
-require 'capistrano/deploy'
 
 # Includes tasks from other gems included in your Gemfile
 #
