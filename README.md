@@ -1,4 +1,8 @@
-#Sinatra-Shell
-I may write a dsl like the rails project commands.  To do that, I need to know what a good base sinatra app looks like.  This repo is where I track that.
+#PhotoGumbo
 
-From here out, I plan to base all sinatra apps off it and push any worthy opinions about layout back into it in a  clean way.
+A bucket that lets you have people combine photos from an event.
+
+* Should allow you to download
+* Access to link should give you control to add, tag, caption, and download images
+
+
