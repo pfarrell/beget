@@ -28,8 +28,8 @@
       .collapse.navbar-collapse#navbar-collapse
         %ul.nav.navbar-nav
           %li
-            %a{href: "#{url_for("/")}"}
-              Menu stuff goes here
+            %form.navbar-form{method: "GET", action: "#{url_for("/page/new")}", name: "new_page"}
+              %input.btn.btn-default{type:"submit",value:"New Page"}
     .container#content
       =yield
     .footer
